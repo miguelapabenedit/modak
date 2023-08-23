@@ -148,7 +148,7 @@ func TestSend_WhenRequestRateLimitReached_ThenFails(t *testing.T) {
 		ntype string,
 		startDate time.Time,
 	) (notification.Notifications, error) {
-		return notification.Notifications{{ID: 1, UserID: req.UserID, Type: req.Type}}, nil
+		return notification.Notifications{{ID: 1, UserID: req.UserID, Type: notification.Type{Name: req.Type}}}, nil
 	}
 	notifService := buildDefaultService(nil, storerMock, nil)
 

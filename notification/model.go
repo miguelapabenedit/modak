@@ -33,14 +33,14 @@ type Notifications []Notification
 type Notification struct {
 	ID     int
 	UserID int
-	Type   string
+	Type   Type
 	Date   time.Time
 }
 
 func NewNotification(userID int, notifType Type) Notification {
 	return Notification{
 		UserID: userID,
-		Type:   notifType.Name,
+		Type:   notifType,
 	}
 }
 

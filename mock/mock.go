@@ -51,7 +51,7 @@ func (r *memoryRepo) GetUserNotificationSinceDate(
 	}
 
 	for i := len(r.notifications) - 1; i >= 0; i-- {
-		if strings.EqualFold(r.notifications[i].Type, ntype) &&
+		if strings.EqualFold(r.notifications[i].Type.Name, ntype) &&
 			r.notifications[i].UserID == userID &&
 			r.notifications[i].Date.After(startDate) {
 			data = append(data, r.notifications[i])
